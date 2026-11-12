@@ -14,4 +14,21 @@ for chunk in llm.stream(msg):
 - flush=True 立即把内容刷到终端，不等缓冲区攒够再显示。
 
 ## langchain对模型可用工具的封装
-从langchain.tool包里引入tool，这个工具变成了大模型自动可以用的工具了，此时的注释也变成了给大模型看的工具描述
+从langchain.tool包里引入tool，这个工具变成了大模型自动可以用的工具了，此时的注释也变成了给大模型看的工具描述.
+不过也不是魔法，只是大模型能认识这个工具了，具体要让大模型能调用这个工具，还要绑定一下工具
+
+## create_agent常用的参数
+- model:模型，唯一必填参数
+- tools:可用工具列表
+- system_prompt:系统提示词，定义agent的角色和行为
+- 传给agent的消息格式如下
+```py
+{
+    "messages":[
+        {
+            "role":"user",
+            "content":"杭州天气怎么样"
+        }
+    ]
+}
+```
