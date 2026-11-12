@@ -12,3 +12,6 @@ for chunk in llm.stream(msg):
 ```
 - print默认end会换行，所以将end换为啥也没有
 - flush=True 立即把内容刷到终端，不等缓冲区攒够再显示。
+
+## langchain对模型可用工具的封装
+从langchain.tool包里引入tool，这个工具变成了大模型自动可以用的工具了，此时的注释也变成了给大模型看的工具描述
